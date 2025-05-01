@@ -19,18 +19,11 @@ const Home = () => {
     try {
       setIsUploading(true);
       
-      // In a real implementation, you would upload the file to the server here
-      // For now, we'll simulate a successful upload and navigate to the editor
-      
-      // Simulate network delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Store the file in sessionStorage (just the filename for now, in a real app we'd store a reference)
-      sessionStorage.setItem('editingFile', file.name);
-      
-      // Navigate to the editor
-      navigate('/editor');
+      // In a production app, we might want to navigate to a specific editor
+      // Redirect to the resize tool as an example
+      navigate('/tools/resize');
     } catch (error) {
+      console.error('Error uploading file:', error);
       toast({
         variant: "destructive",
         title: "Upload failed",

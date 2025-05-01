@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Editor from "@/pages/Editor";
+import Tools from "@/pages/Tools";
+import ResizeTool from "@/pages/tools/ResizeTool";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -14,6 +16,8 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/editor" component={Editor} />
+      <Route path="/tools" component={Tools} />
+      <Route path="/tools/resize" component={ResizeTool} />
       <Route component={NotFound} />
     </Switch>
   );

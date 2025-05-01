@@ -78,7 +78,7 @@ const ToolGrid = () => {
       
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
         {tools.map((tool) => (
-          <Link key={tool.id} href="/editor">
+          <Link key={tool.id} href={`/tools/${tool.id}`}>
             <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden cursor-pointer">
               <div className="h-32 bg-blue-50 flex items-center justify-center">
                 {tool.icon}
