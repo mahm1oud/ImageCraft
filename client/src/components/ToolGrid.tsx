@@ -93,11 +93,9 @@ const ToolGrid = () => {
       </div>
       
       <div className="text-center">
-        <Link href="/tools">
-          <a className="text-primary hover:underline font-medium flex items-center justify-center">
-            View all 20+ tools
-            <ArrowRight className="ml-1" size={16} />
-          </a>
+        <Link href="/tools" className="text-primary hover:underline font-medium flex items-center justify-center">
+          View all 20+ tools
+          <ArrowRight className="ml-1" size={16} />
         </Link>
       </div>
     </section>
