@@ -13,6 +13,7 @@ import ConvertTool from "@/pages/tools/ConvertTool";
 import RotateTool from "@/pages/tools/RotateTool";
 import AdjustTool from "@/pages/tools/AdjustTool";
 import CompressTool from "@/pages/tools/CompressTool";
+import WatermarkTool from "@/pages/tools/WatermarkTool";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -28,6 +29,7 @@ function Router() {
       <Route path="/tools/rotate" component={RotateTool} />
       <Route path="/tools/adjust" component={AdjustTool} />
       <Route path="/tools/compress" component={CompressTool} />
+      <Route path="/tools/watermark" component={WatermarkTool} />
       <Route component={NotFound} />
     </Switch>
   );

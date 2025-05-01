@@ -39,19 +39,26 @@ export const IMAGE_FORMAT_SCHEMA = z.enum(IMAGE_FORMATS);
 
 // Define image processing operations
 export const IMAGE_OPERATIONS = [
+  // Core operations
   "resize", 
   "rotate", 
   "compress", 
   "crop", 
+  "convert",
+  
+  // Advanced operations
   "addText", 
-  "addFrame", 
-  "removeBackground", 
   "addWatermark", 
-  "blurFaces", 
   "adjustBrightness", 
   "adjustContrast", 
-  "adjustSaturation", 
-  "convert"
+  "adjustSaturation",
+  
+  // Premium operations (for future implementation)
+  "addFrame", 
+  "removeBackground", 
+  "blurFaces",
+  "createMeme",
+  "htmlToImage"
 ] as const;
 export const IMAGE_OPERATION_SCHEMA = z.enum(IMAGE_OPERATIONS);
 

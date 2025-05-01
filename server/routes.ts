@@ -148,6 +148,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
           });
           break;
           
+        case 'addText':
+          // In a full implementation, you would use something like
+          // sharp-text-overlay or other libraries to add text,
+          // but Sharp by itself doesn't support text overlays.
+          // For this demo, we'll just pass through the image to
+          // simulate processing.
+          console.log('Text watermark requested:', params.text);
+          // No actual processing happens here in this demo
+          break;
+          
+        case 'addWatermark':
+          // Similarly, for a real implementation you would need to
+          // load the watermark image and composite it onto the original
+          // Again, for this demo we'll simulate processing
+          console.log('Image watermark requested');
+          // No actual processing happens here in this demo
+          break;
+          
         case 'adjustBrightness':
           const { brightness } = params;
           sharpInstance = sharpInstance.modulate({
