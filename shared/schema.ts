@@ -17,7 +17,7 @@ export const insertUserSchema = createInsertSchema(users).pick({
 // Images table to store processed images
 export const images = pgTable("images", {
   id: serial("id").primaryKey(),
-  userId: integer("user_id").references(() => users.id),
+  userId: integer("user_id").references(() => users.id), // Nullable by default
   originalName: text("original_name").notNull(),
   originalFormat: text("original_format").notNull(),
   processedFormat: text("processed_format").notNull(),
