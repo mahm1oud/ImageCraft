@@ -10,6 +10,9 @@ import Tools from "@/pages/Tools";
 import ResizeTool from "@/pages/tools/ResizeTool";
 import CropTool from "@/pages/tools/CropTool";
 import ConvertTool from "@/pages/tools/ConvertTool";
+import RotateTool from "@/pages/tools/RotateTool";
+import AdjustTool from "@/pages/tools/AdjustTool";
+import CompressTool from "@/pages/tools/CompressTool";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -22,6 +25,9 @@ function Router() {
       <Route path="/tools/resize" component={ResizeTool} />
       <Route path="/tools/crop" component={CropTool} />
       <Route path="/tools/convert" component={ConvertTool} />
+      <Route path="/tools/rotate" component={RotateTool} />
+      <Route path="/tools/adjust" component={AdjustTool} />
+      <Route path="/tools/compress" component={CompressTool} />
       <Route component={NotFound} />
     </Switch>
   );

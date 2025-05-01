@@ -115,8 +115,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
           break;
           
         case 'rotate':
-          const { angle } = params;
+          const { angle, flipX, flipY } = params;
+          // Apply rotation
           sharpInstance = sharpInstance.rotate(Number(angle) || 0);
+          
+          // Apply flips if needed
+          if (flipX === true) {
+            sharpInstance = sharpInstance.flop();
+          }
+          if (flipY === true) {
+            sharpInstance = sharpInstance.flip();
+          }
           break;
           
         case 'compress':
