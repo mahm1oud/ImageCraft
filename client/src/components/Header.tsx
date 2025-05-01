@@ -18,43 +18,31 @@ const Header = () => {
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/">
-          <div className="flex items-center cursor-pointer">
-            <Camera className="text-primary text-3xl mr-2" />
-            <h1 className="text-2xl font-bold font-poppins text-textColor">
-              Image<span className="text-primary">Editor</span>Pro
-            </h1>
-          </div>
+        <Link href="/" className="flex items-center cursor-pointer">
+          <Camera className="text-primary text-3xl mr-2" />
+          <h1 className="text-2xl font-bold font-poppins text-textColor">
+            Image<span className="text-primary">Editor</span>Pro
+          </h1>
         </Link>
 
         <nav className="hidden md:flex space-x-6">
-          <Link href="/">
-            <a className={`font-medium ${location === '/' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
-              Tools
-            </a>
+          <Link href="/" className={`font-medium ${location === '/' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
+            Tools
           </Link>
-          <Link href="/pricing">
-            <a className={`font-medium ${location === '/pricing' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
-              Pricing
-            </a>
+          <Link href="/pricing" className={`font-medium ${location === '/pricing' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
+            Pricing
           </Link>
-          <Link href="/api">
-            <a className={`font-medium ${location === '/api' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
-              API
-            </a>
+          <Link href="/api" className={`font-medium ${location === '/api' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
+            API
           </Link>
-          <Link href="/help">
-            <a className={`font-medium ${location === '/help' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
-              Help
-            </a>
+          <Link href="/help" className={`font-medium ${location === '/help' ? 'text-primary' : 'text-textColor hover:text-primary'} transition`}>
+            Help
           </Link>
         </nav>
 
         <div className="flex items-center">
-          <Link href="/login">
-            <a className="hidden md:block text-primary hover:text-blue-700 font-medium mr-4 transition">
-              Login
-            </a>
+          <Link href="/login" className="hidden md:block text-primary hover:text-blue-700 font-medium mr-4 transition">
+            Login
           </Link>
           <Button className="bg-primary hover:bg-blue-600 text-white">
             Sign Up
@@ -68,31 +56,21 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent>
               <div className="flex flex-col space-y-4 pt-10">
-                <Link href="/">
-                  <a className="font-medium text-textColor hover:text-primary transition py-2">
-                    Tools
-                  </a>
+                <Link href="/" className="font-medium text-textColor hover:text-primary transition py-2">
+                  Tools
                 </Link>
-                <Link href="/pricing">
-                  <a className="font-medium text-textColor hover:text-primary transition py-2">
-                    Pricing
-                  </a>
+                <Link href="/pricing" className="font-medium text-textColor hover:text-primary transition py-2">
+                  Pricing
                 </Link>
-                <Link href="/api">
-                  <a className="font-medium text-textColor hover:text-primary transition py-2">
-                    API
-                  </a>
+                <Link href="/api" className="font-medium text-textColor hover:text-primary transition py-2">
+                  API
                 </Link>
-                <Link href="/help">
-                  <a className="font-medium text-textColor hover:text-primary transition py-2">
-                    Help
-                  </a>
+                <Link href="/help" className="font-medium text-textColor hover:text-primary transition py-2">
+                  Help
                 </Link>
                 <hr className="border-gray-200" />
-                <Link href="/login">
-                  <a className="font-medium text-primary hover:text-blue-700 transition py-2">
-                    Login
-                  </a>
+                <Link href="/login" className="font-medium text-primary hover:text-blue-700 transition py-2">
+                  Login
                 </Link>
                 <Button className="bg-primary hover:bg-blue-600 text-white w-full">
                   Sign Up
