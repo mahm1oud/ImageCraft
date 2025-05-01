@@ -143,9 +143,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
           
         case 'adjustContrast':
           const { contrast } = params;
-          sharpInstance = sharpInstance.modulate({
-            contrast: Number(contrast) || 1.0
-          });
+          // Sharp doesn't support contrast in modulate, use linear method instead
+          sharpInstance = sharpInstance.linear(
+            Number(contrast) || 1.0, // multiply (increase contrast)
+            0 // offset (no change in brightness)
+          );
           break;
           
         case 'adjustSaturation':
@@ -189,6 +191,27 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Get metadata of processed image
       const processedInfo = await sharp(processedImageBuffer).metadata();
       
+      // Save image processing details to database
+      try {
+        await storage.saveImage({
+          originalName: path.basename(tempFilePath),
+          originalFormat: path.extname(tempFilePath).slice(1) || 'unknown',
+          processedFormat: outputFormat,
+          size: processedImageBuffer.length,
+          width: processedInfo.width || 0,
+          height: processedInfo.height || 0,
+          userId: null, // Anonymous user for now
+          processingOptions: { 
+            operation, 
+            params, 
+            outputFormat 
+          }
+        });
+      } catch (dbError) {
+        console.error('Error saving image to database:', dbError);
+        // Continue even if database save fails
+      }
+
       res.json({
         outputFilePath,
         outputFormat,
