@@ -8,6 +8,8 @@ import Home from "@/pages/Home";
 import Editor from "@/pages/Editor";
 import Tools from "@/pages/Tools";
 import ResizeTool from "@/pages/tools/ResizeTool";
+import CropTool from "@/pages/tools/CropTool";
+import ConvertTool from "@/pages/tools/ConvertTool";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
@@ -18,6 +20,8 @@ function Router() {
       <Route path="/editor" component={Editor} />
       <Route path="/tools" component={Tools} />
       <Route path="/tools/resize" component={ResizeTool} />
+      <Route path="/tools/crop" component={CropTool} />
+      <Route path="/tools/convert" component={ConvertTool} />
       <Route component={NotFound} />
     </Switch>
   );

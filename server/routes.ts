@@ -124,6 +124,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
           // Quality will be applied in the toFormat step
           break;
           
+        case 'convert':
+          // Format conversion is handled in the toFormat step
+          // No additional processing needed here
+          break;
+          
         case 'crop':
           const { left, top, cropWidth, cropHeight } = params;
           sharpInstance = sharpInstance.extract({
