@@ -9,7 +9,8 @@ import {
   Type, 
   Filter,
   ArrowRight,
-  ArrowLeft
+  ArrowLeft,
+  Stamp
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -43,6 +44,13 @@ const Tools = () => {
       description: 'Modify brightness, contrast & more',
       icon: <Filter className="text-primary text-5xl" />,
       category: 'basic'
+    },
+    {
+      id: 'watermark',
+      name: 'Watermark Image',
+      description: 'Add text or image watermark to protect your work',
+      icon: <Stamp className="text-primary text-5xl" />,
+      category: 'advanced'
     },
     {
       id: 'crop',
